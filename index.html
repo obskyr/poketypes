@@ -1,0 +1,257 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="styles/poketypes.css">
+        
+        <!-- Themes! I sure do love me some themes. -->
+        <!-- Note: when adding themes, make sure the theme name is the SECOND class. -->
+        <link class="theme pasteldot" rel="stylesheet" type="text/css" href="styles/themes/pasteldot.css">
+        <link class="theme fredrik" rel="stylesheet" type="text/css" href="styles/themes/fredrik.css">
+        <link class="theme babyblue" rel="stylesheet" type="text/css" href="styles/themes/babyblue.css">
+        <link class="theme babypink" rel="stylesheet" type="text/css" href="styles/themes/babypink.css">
+        
+        <link class="default" rel="stylesheet" type="text/css" href="styles/themes/pasteldot.css">
+        <!-- themes end, suckaaa -->
+        
+        <link rel="icon" type="image/png" href="images/pastelball.png">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="pokehelp.js"></script>
+        <script src="poketypes.js"></script>
+        <script src="theming.js"></script> <!-- THEEEEEEEMES -->
+        <title>
+            Pokémon Type Helper - obskyr
+        </title>
+    </head>
+    
+    <!-- HÄR TRÄNAR JAG EN FIGHTAAAAAH. -->
+    <!-- NYA STRIDER. VI GÅR MOT NYA TIDER. -->
+    
+    <!-- Oh, and I appreciate you looking into the source code. I put a lot of love into this. -->
+    
+    <body>
+        <table id="everywrap" cellspacing="0" cellpadding="0">
+            <td class="centercell">
+                <div class="content" style="text-align: center;">
+                    <noscript>
+                        <div style="white-space: normal; font-size: 6vh; text-shadow: 2px 2px #D0D0C8;">
+                            The type helper runs on JavaScript, which you don't seem to have enabled. For it to work, enable JS!
+                        </div>
+                        <br>
+                    </noscript>
+                    <table style="display: inline-table; width: 100%; height: 100%; text-align: center; font-size: inherit;" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td style="width: 25%;">
+                                <table class="types attacker" id="attacker" cellspacing="3" cellpadding="0">
+                                    <tr>
+                                        <td class="type normal">
+                                            NORMAL
+                                        </td>
+                                        <td class="type fire">
+                                            FIRE
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type fighting">
+                                            FIGHTING
+                                        </td>
+                                        <td class="type water">
+                                            WATER
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type flying">
+                                            FLYING
+                                        </td>
+                                        <td class="type grass">
+                                            GRASS
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type poison">
+                                            POISON
+                                        </td>
+                                        <td class="type electric">
+                                            ELECTRIC
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type ground">
+                                            GROUND
+                                        </td>
+                                        <td class="type psychic">
+                                            PSYCHIC
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type rock">
+                                            ROCK
+                                        </td>
+                                        <td class="type ice">
+                                            ICE
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type bug">
+                                            BUG
+                                        </td>
+                                        <td class="type dragon">
+                                            DRAGON
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type ghost">
+                                            GHOST
+                                        </td>
+                                        <td class="type dark">
+                                            DARK
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type steel">
+                                            STEEL
+                                        </td>
+                                        <td class="type fairy">
+                                            FAIRY
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- The attacker's table ends here, yo! -->
+                            <td style="width: 6%; text-align: left;">
+                                <img src="images/attarrow.svg" width="92%" />
+                            </td>
+                            <!-- ...and the defender's table starts here! -->
+                            <td style="width: 25%;">
+                                <table class="types defender" id="defender" cellspacing="3" cellpadding="0">
+                                    <tr>
+                                        <td class="type normal">
+                                            NORMAL
+                                        </td>
+                                        <td class="type fire">
+                                            FIRE
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type fighting">
+                                            FIGHTING
+                                        </td>
+                                        <td class="type water">
+                                            WATER
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type flying">
+                                            FLYING
+                                        </td>
+                                        <td class="type grass">
+                                            GRASS
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type poison">
+                                            POISON
+                                        </td>
+                                        <td class="type electric">
+                                            ELECTRIC
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type ground">
+                                            GROUND
+                                        </td>
+                                        <td class="type psychic">
+                                            PSYCHIC
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type rock">
+                                            ROCK
+                                        </td>
+                                        <td class="type ice">
+                                            ICE
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type bug">
+                                            BUG
+                                        </td>
+                                        <td class="type dragon">
+                                            DRAGON
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type ghost">
+                                            GHOST
+                                        </td>
+                                        <td class="type dark">
+                                            DARK
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="type steel">
+                                            STEEL
+                                        </td>
+                                        <td class="type fairy">
+                                            FAIRY
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="resultbox">
+                                <div id="results" style="display: none;">
+                                    <table id="choicesummary" cellspacing="0" cellpadding="0"><td id="attacktype" class="type fighting">FIGHTING</td><td style="width: 48px; text-align: center;"><img src="images/attarrow2.svg" style="height: 100%;"/></td><td id="defendtype1" class="type normal">NORMAL</td><td id="defendtype2" class=""></td></table>
+                                    <br>
+                                    <br>
+                                    <div id="effectivity">
+                                        2x
+                                        <br>
+                                        SUPER EFFECTIVE!
+                                    </div>
+                                </div>
+                                <div id="instructions">
+                                    Choose your attack type in the box to the LEFT.
+                                    Choose your defender type(s) in the box to the RIGHT.
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table cellspacing=0 cellpadding=0 style="width: 100%; height: 9vh; vertical-align: middle; text-align: center;">
+                        <tr>
+                            <td>
+                                <div id="themecontainer">
+                                    <table cellspacing=0 cellpadding=0 id="themebuttons">
+                                        <!-- 
+                                            Note: When adding themes, it's important that the theme name (which is the
+                                            second class in the link element) is the SECOND class of the div. For
+                                            example: class="themebutton pasteldot" where "pasteldot" is the theme name.
+                                            Also make sure the background-color of the theme button is the same as the
+                                            background-color of #themecontainer in that particular stylesheet. Makes sense?
+                                        -->
+                                        <tr>
+                                            <td>
+                                                <div class="themebutton pasteldot" style="background-color: #FFF6D0;">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="themebutton fredrik" style="background-color: #E5E5E5;">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="themebutton babyblue" style="background-color: #ADD5FF;">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="themebutton babypink" style="background-color: #FFCFFA;">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,310 @@
+/* Fonts! */
+
+@font-face {
+    font-family: "Power Green";
+    src: url(../fonts/pkmnem.ttf) format("truetype"),
+         url(../fonts/pkmnem.woff) format("woff");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Power Green Small";
+    src: url(../fonts/pkmnems.ttf) format("truetype"),
+         url(../fonts/pkmnems.woff) format("woff");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Power Green Narrow";
+    src: url(../fonts/pkmnemn.ttf) format("truetype"),
+         url(../fonts/pkmnemn.woff) format("woff");
+    font-weight: normal;
+}
+
+/* ------ */
+
+/* Vertical centering and CSS resetting */
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.centercell {
+    vertical-align: middle;
+    text-align: center;
+}
+.centercell > * {
+    text-align: left;
+}
+
+#everywrap {
+    width: 100%;
+    height: 100%;
+}
+
+/* --- */
+
+body {
+    margin: 0;
+    background: #FFF6D0 url(../images/pasteldot.png);
+}
+
+.content {
+    display: inline-block;
+    width: 75%;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 9vh;
+    border-radius: 10px;
+    white-space: nowrap;
+    
+    background: #FFF;
+    text-align: center;
+    font-family: "Power Green Small";
+    font-size: 3.98vh;
+}
+.resultbox {
+    padding: 30px;
+}
+#effectivity {
+    min-height: 3.5em;
+    color: #606061;
+    font-size: 7.8vh;
+    text-shadow: 2px 2px #D0D0C8;
+    /* Black text - officially in Emerald.
+    color: #000;
+    text-shadow: 2px 2px #B9B8B9;
+    */
+}
+#choicesummary {
+    display: inline-table;
+    width: 98%;
+    height: 1.5em;
+    table-layout: fixed;
+    font-size: inherit;
+}
+#instructions, #smallinstructions {
+    color: #C2C2C2;
+    font-size: 5.7vh;
+    text-shadow: 2px 2px #EEE;
+}
+#smallinstructions {
+    font-size: 3.98vh;
+}
+
+/* Pokémon types */
+
+.types {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #FFF6D0;
+    
+    white-space: nowrap;
+    table-layout: fixed;
+    font-size: 3.98vh;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.attacker {
+    float: left;
+}
+.defender {
+    float: left;
+}
+
+.type {
+    width: 100px;
+    height: 1.15em;
+    border-radius: 4px;
+    padding: 2px;
+    padding-top: 3px;
+    
+    text-align: center;
+    font-family: "Power Green";
+    color: white;
+    text-shadow: 1.5px 1.5px #D0D0C8;
+}
+
+#attacktype:not(.type), #defendtype1:not(.type), #defendtype2:not(.type) {
+    padding: 2px;
+    padding-top: 3px;
+    width: 100px;
+    border-radius: 4px;
+    background-color: #E3F2FF;
+}
+
+.normal {
+    background-color: #A8A77A;
+}
+.fire {
+    background-color: #EE8130;
+}
+.fighting {
+    background-color: #C22E28;
+}
+.water {
+    background-color: #6390F0;
+}
+.flying {
+    background-color: #A98FF3;
+}
+.grass {
+    background-color: #7AC74C;
+}
+.poison {
+    background-color: #A33EA1;
+}
+.electric {
+    background-color: #F7D02C;
+}
+.ground {
+    background-color: #E2BF65;
+}
+.psychic {
+    background-color: #F95587;
+}
+.rock {
+    background-color: #B6A136;
+}
+.ice {
+    background-color: #96D9D6;
+}
+.bug {
+    background-color: #A6B91A;
+}
+.dragon {
+    background-color: #6F35FC;
+}
+.ghost {
+    background-color: #735797;
+}
+.dark {
+    background-color: #705746;
+}
+.steel {
+    background-color: #B7B7CE;
+}
+.fairy {
+    background-color: #EE99AC;
+}
+
+/*
+    Order of types courtesy of Bulbapedia.
+    Don't know if there's actually a reason
+    for their ordering, but...
+*/
+
+/* Button...ing! */
+
+.type.pressed {
+    color: #7f7f7f;
+    text-shadow: 1.5px 1.5px #686864;
+}
+.types .type {
+    cursor: pointer;
+}
+.types .type:hover {
+    opacity: 0.75;
+}
+
+/*
+    This following part could theoretically be done with
+    half-opacity completely black elements over the type
+    divs, but using tables, as is the case with the current
+    HTML, it is very hard. Plus, opacity isn't the best
+    choice for all browsers, so it's partly for the best. Maybe.
+*/
+.normal.pressed {
+    background-color: #54543D;
+}
+.fire.pressed {
+    background-color: #774118;
+}
+.fighting.pressed {
+    background-color: #611714;
+}
+.water.pressed {
+    background-color: #324878;
+}
+.flying.pressed {
+    background-color: #55487A;
+}
+.grass.pressed {
+    background-color: #3D6426;
+}
+.poison.pressed {
+    background-color: #521F51;
+}
+.electric.pressed {
+    background-color: #807B68;
+}
+.ground.pressed {
+    background-color: #716033;
+}
+.psychic.pressed {
+    background-color: #7D2B44;
+}
+.rock.pressed {
+    background-color: #5B511B;
+}
+.ice.pressed {
+    background-color: #4B6D6B;
+}
+.bug.pressed {
+    background-color: #535D0D;
+}
+.dragon.pressed {
+    background-color: #381B7E;
+}
+.ghost.pressed {
+    background-color: #3A2C4C;
+}
+.dark.pressed {
+    background-color: #382C23;
+}
+.steel.pressed {
+    background-color: #5C5C67;
+}
+.fairy.pressed {
+    background-color: #774D56;
+}
+
+/* Theme buttons */
+
+#themecontainer {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    
+    display: inline-block;
+    width: 76%;
+    border-radius: 1.55vh;
+    padding: 0.9vh;
+}
+#themebuttons {
+    width: 100%;
+    height: 4vh;
+}
+#themebuttons td:first-child .themebutton { /* In order to get nice rounded corners on the whole container. */
+    border-radius: 0.65vh 0 0 0.65vh;
+}
+#themebuttons td:last-child .themebutton {  /* - || - */
+    border-radius: 0 0.65vh 0.65vh 0;
+}
+
+
+.themebutton {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+.themebutton:hover {
+    opacity: 0.5;
+}
