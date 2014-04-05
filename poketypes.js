@@ -78,7 +78,7 @@ var choices = {
             var type1 = this.defender.chosen[0];
             var type2 = this.defender.chosen.length > 1 ? this.defender.chosen[1] : '';
             var STAB = 1; // Who knows, I might implement a STAB button?
-            var effectivity = attackEffectivity(atype, type1, type2, STAB);
+            var effectivity = attackEffectivity(atype, [type1, type2], STAB);
             
             return effectivityStr = effectivity + "x<br>" + effectivityTexts[effectivity].toUpperCase() + "!"
         } else {

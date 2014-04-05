@@ -21,12 +21,27 @@
     0.0   LIST OF TYPES
 */
 
+// Help functions for later
+
 function toTitleCase(s) {
     return s.replace(/\w\S*/g, function(txt) {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };
 function randomChoice(arr) {
     return arr[Math.floor(Math.random() * arr.length)]
 };
+function multiplyArray(arr) {
+    result = 1;
+    for (var i = 0; i < arr.length; i++) {
+        result *= arr[i]
+        if (arr[i] === 0) {
+            break;
+        };
+    };
+    return result;
+};
+
+// ---
+
 
 var typel = ['Normal', 'Fire', 'Water', 'Electric', 'Grass', 'Ice', 'Fighting', 'Poison', 'Ground', 'Flying', 'Psychic', 'Bug', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Steel', 'Fairy'];
 var typellc = [];
@@ -81,7 +96,7 @@ typeobj = {
     },
     'Poison':   { // PoiTD
         2.0: ['Grass', 'Fairy'],
-        1.0: ['Normal', 'Fire', 'Water', 'Electric', 'Ice', 'Fighting', 'Flying', 'Psychic', 'Bug', 'Dragon', 'Dark', 'Fairy'],
+        1.0: ['Normal', 'Fire', 'Water', 'Electric', 'Ice', 'Fighting', 'Flying', 'Psychic', 'Bug', 'Dragon', 'Dark',],
         0.5: ['Poison', 'Ground', 'Rock', 'Ghost'],
         0.0: ['Steel'],
     },
@@ -158,7 +173,7 @@ var typedefobj = { // It's out of order, but it's an object, so IT DOESN'T MATTE
         },
     'Dark': {
         0.5: ['Ghost', 'Dark'],
-        1.0: ['Poison', 'Electric', 'Normal', 'Fire', 'Flying', 'Ice', 'Dragon', 'Steel', 'Rock', 'Grass', 'Ground'],
+        1.0: ['Poison', 'Electric', 'Normal', 'Fire', 'Flying', 'Ice', 'Dragon', 'Steel', 'Rock', 'Grass', 'Ground', 'Water'],
         2.0: ['Fighting', 'Fairy', 'Bug'],
         0.0: ['Psychic']
         },
@@ -236,7 +251,7 @@ var typedefobj = { // It's out of order, but it's an object, so IT DOESN'T MATTE
         },
     'Fairy': {
         0.5: ['Dark', 'Fighting', 'Bug'],
-        1.0: ['Ghost', 'Poison', 'Electric', 'Normal', 'Fire', 'Psychic', 'Flying', 'Ice', 'Water', 'Rock', 'Fairy', 'Grass'],
+        1.0: ['Ghost', 'Electric', 'Normal', 'Fire', 'Psychic', 'Flying', 'Ice', 'Water', 'Rock', 'Fairy', 'Grass'],
         2.0: ['Poison', 'Steel'],
         0.0: ['Dragon']
         },
@@ -321,43 +336,30 @@ function typegen(typelist) {
     return randomChoice(typelist);
 }
 
-function attackEffectivity(atype, type1, type2, STAB) {
-    /* Returns the attack effectivity of atype against type1 and optionally type2, with optional STAB and dictionary choice. */    
-    type2 = typeof type2 !== 'undefined' ? toTitleCase(type2) : null;
+function attackEffectivity(atype, dtypes, STAB) {
+    /* Returns the attack effectivity of atype against the types in the array dtypes, with optional STAB. */    
+    dtypes = typeof dtypes !== 'string' ? dtypes : [dtypes];
     STAB = typeof STAB !== 'undefined' ? STAB : 1.0;
     atype = toTitleCase(atype);
-    type1 = toTitleCase(type1);
+    dtypes = dtypes.map(function(v) {return toTitleCase(v)});
+    dtypes = dtypes.filter(function(val, index, self) { // Check for duplicates.
+        return self.indexOf(val) === index && val.length;
+    });
     
-    var effect1 = null // Setting       variables     for     whole
-    var effect2 = null //         dummy           fun     the       family.
-    if (type2 !== null && type1.toLowerCase() === type2.toLowerCase()){ // Check for two of the same type.
-        type2 = null;
-    };
+    effects = [];
     
-    for (var effect in typedefD(type1)) { // Sets the local variable effect1 to whatever effect type1 corresponds to in the active dictionary.
-        if (typedefD(type1).hasOwnProperty(effect)) {
-            var curDefObj = typedefD(type1);
-            var curDefArr = curDefObj[effect];
-            if (curDefArr.indexOf(atype) > -1) {
-                effect1 = effect;
-                break;
-            };
-        };
-    };
-    if (type2 !== null && type2 !== '') { // Sets the local variable effect2 to whatever effect type2 corresponds to in the active dictionary, if type2 is valid.
-        for (var effect in typedefD(type2)) {
-            if (typedefD(type2).hasOwnProperty(effect)) {
-                var curDefObj = typedefD(type2);
+    for (var i = 0; i < dtypes.length; i++) { // Puts all of the effects atype has on the respective types in dtypes in the effects array.
+        for (var effect in typedefD(dtypes[i])) {
+            if (typedefD(dtypes[i]).hasOwnProperty(effect)) {
+                var curDefObj = typedefD(dtypes[i]);
                 var curDefArr = curDefObj[effect];
                 if (curDefArr.indexOf(atype) > -1) {
-                    effect2 = effect;
+                    effects.push(effect);
                     break;
                 };
             };
         };
     };
-    if (effect2 === null) {
-        effect2 = 1;
-    };
-    return effect1 * effect2 * STAB;
+    
+    return multiplyArray(effects) * STAB;
 }
