@@ -60,7 +60,7 @@ typeobj = {
     },
     'Fire':     { // FirTD
         2.0: ['Grass', 'Ice', 'Bug', 'Steel'],
-        1.0: ['Normal', 'Electric'].concat(typel.slice(6, 13), ['Ghost', 'Dark', 'Fairy']),
+        1.0: ['Normal', 'Electric'].concat(typel.slice(6, 11), ['Ghost', 'Dark', 'Fairy']),
         0.5: ['Fire', 'Water', 'Rock', 'Dragon'],
         0.0: []
     },
@@ -107,7 +107,7 @@ typeobj = {
         0.0: ['Flying'],
     },
     'Flying':   { // FlyTD
-        2.0: ['Grass', 'Fighting'],
+        2.0: ['Grass', 'Fighting', 'Bug'],
         1.0: ['Normal', 'Fire', 'Water', 'Ice', 'Poison', 'Ground', 'Flying', 'Psychic', 'Ghost', 'Dragon', 'Dark', 'Fairy'],
         0.5: ['Electric', 'Rock', 'Steel'],
         0.0: [],
@@ -132,8 +132,8 @@ typeobj = {
     },
     'Ghost':    { // GhoTD
         2.0: ['Psychic', 'Ghost'],
-        1.0: typel.slice(1, 10).concat(['Bug', 'Rock', 'Dragon', 'Fairy']),
-        0.5: ['Dark', 'Steel'],
+        1.0: typel.slice(1, 10).concat(['Bug', 'Rock', 'Dragon', 'Steel', 'Fairy',]),
+        0.5: ['Dark'],
         0.0: ['Normal'],
     },
     'Dragon':   { // DraTD
@@ -144,8 +144,8 @@ typeobj = {
     },
     'Dark':     { // DarTD
         2.0: ['Psychic', 'Ghost'],
-        1.0: typel.slice(0, 6).concat(['Poison', 'Ground', 'Flying', 'Bug', 'Rock', 'Dragon']),
-        0.5: ['Fighting', 'Dark', 'Steel', 'Fairy'],
+        1.0: typel.slice(0, 6).concat(['Poison', 'Ground', 'Flying', 'Bug', 'Rock', 'Dragon', 'Steel']),
+        0.5: ['Fighting', 'Dark', 'Fairy'],
         0.0: [],
     },
     'Steel':    { // SteTD
@@ -238,14 +238,14 @@ var typedefobj = { // It's out of order, but it's an object, so IT DOESN'T MATTE
         0.0: []
         },
     'Steel': {
-        0.5: ['Ghost', 'Dark', 'Normal', 'Psychic', 'Flying', 'Ice', 'Dragon', 'Steel', 'Rock', 'Fairy', 'Grass', 'Bug'],
-        1.0: ['Electric', 'Water'],
+        0.5: ['Normal', 'Psychic', 'Flying', 'Ice', 'Dragon', 'Steel', 'Rock', 'Fairy', 'Grass', 'Bug'],
+        1.0: ['Electric', 'Water', 'Ghost', 'Dark'],
         2.0: ['Fire', 'Fighting', 'Ground'],
         0.0: ['Poison']
         },
     'Rock': {
         0.5: ['Poison', 'Normal', 'Fire', 'Flying'],
-        1.0: ['Ghost', 'Dark', 'Electric', 'Fire', 'Psychic', 'Ice', 'Dragon', 'Rock', 'Fairy', 'Bug'],
+        1.0: ['Ghost', 'Dark', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Rock', 'Fairy', 'Bug'],
         2.0: ['Water', 'Fighting', 'Steel', 'Grass', 'Ground'],
         0.0: []
         },
@@ -263,8 +263,8 @@ var typedefobj = { // It's out of order, but it's an object, so IT DOESN'T MATTE
         },
     'Bug': {
         0.5: ['Fighting', 'Grass', 'Ground'],
-        1.0: ['Ghost', 'Dark', 'Poison', 'Electric', 'Normal', 'Fire', 'Psychic', 'Ice', 'Dragon', 'Water', 'Steel', 'Fairy', 'Bug'],
-        2.0: ['Fire', 'Rock'],
+        1.0: ['Ghost', 'Dark', 'Poison', 'Electric', 'Normal', 'Psychic', 'Ice', 'Dragon', 'Water', 'Steel', 'Fairy', 'Bug'],
+        2.0: ['Fire', 'Rock', 'Flying'],
         0.0: []
         },
     'Ground': {
