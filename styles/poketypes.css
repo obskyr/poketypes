@@ -55,6 +55,7 @@ body {
     width: 75%;
     width: -moz-min-content;    /* These two lines are for scalability in really small viewports. This container div scales larger than 75% only */
     width: -webkit-min-content; /* if the content exceeds what that width would be. Works in most modern browsers - not IE, though, go figure. */
+    margin: 2.5vmax;
     padding-left: 3vw;
     padding-right: 3vw;
     padding-top: 9vh;
