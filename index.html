@@ -36,7 +36,7 @@
     <body>
         <table id="everywrap" cellspacing="0" cellpadding="0">
             <td class="centercell">
-                <div class="content" style="text-align: center;">
+                <div class="content">
                     <noscript>
                         <div style="white-space: normal; font-size: 6vh; text-shadow: 2px 2px #D0D0C8;">
                             The type helper runs on JavaScript, which you don't seem to have enabled. For it to work, enable JS!
@@ -214,6 +214,13 @@
                                     </div>
                                 </div>
                                 <div id="instructions">
+                                    <div style="width: 348px;"></div>
+                                    <!--
+                                        Keeps the container from scaling when the instructions disappear.  The reason the width is
+                                        348px, specifically, is that that is the minimum width of #choicesummary. #choicesummary
+                                        dictates the minimum width of #results, since the text can wrap, and so in order to not have
+                                        this table cell scale when the content changes we need the same minimum width of the content.
+                                    -->
                                     Choose your attack type in the box to the LEFT.
                                     Choose your defender type(s) in the box to the RIGHT.
                                 </div>
