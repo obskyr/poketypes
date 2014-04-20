@@ -9,6 +9,7 @@
         <link class="theme fredrik" rel="stylesheet" type="text/css" href="styles/themes/fredrik.css">
         <link class="theme babyblue" rel="stylesheet" type="text/css" href="styles/themes/babyblue.css">
         <link class="theme babypink" rel="stylesheet" type="text/css" href="styles/themes/babypink.css">
+        <link class="theme gameboy" rel="stylesheet" type="text/css" href="styles/themes/gameboy.css">
         
         <link class="default" rel="stylesheet" type="text/css" href="styles/themes/pasteldot.css">
         <!-- themes end, suckaaa -->
@@ -21,6 +22,16 @@
         <title>
             Pokétypes
         </title>
+        <!-- Dreamhost's automatic analytics mess everything up, so here's the regular snippet... -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-47859546-2', 'obskyr.io');
+          ga('send', 'pageview');
+        </script>
     </head>
     
     <!-- HÄR TRÄNAR JAG EN FIGHTAAAAAH. -->
@@ -43,7 +54,7 @@
                         </div>
                         <br>
                     </noscript>
-                    <table style="display: inline-table; width: 100%; height: 100%; text-align: center; font-size: inherit;" cellspacing="0" cellpadding="0">
+                    <table class="contenttable" style="display: inline-table; width: 100%; height: 100%; text-align: center; font-size: inherit;" cellspacing="0" cellpadding="0">
                         <tr>
                             <td style="width: 25%;">
                                 <table class="types attacker" id="attacker" cellspacing="3" cellpadding="0">
@@ -123,7 +134,9 @@
                             </td>
                             <!-- The attacker's table ends here, yo! -->
                             <td style="width: 6%; text-align: left;">
-                                <img src="images/attarrow.svg" width="92%" />
+                                <div style="width: 100%; padding-top: 1.5vh; padding-bottom: 1.5vh;">
+                                    <img src="images/attarrow.svg" style="width: 92%" />
+                                </div>
                             </td>
                             <!-- ...and the defender's table starts here! -->
                             <td style="width: 25%;">
@@ -204,7 +217,7 @@
                             </td>
                             <td class="resultbox">
                                 <div id="results" style="display: none;">
-                                    <table id="choicesummary" cellspacing="0" cellpadding="0"><td id="attacktype" class="type fighting">FIGHTING</td><td style="width: 48px; text-align: center;"><img src="images/attarrow2.svg" style="height: 100%;"/></td><td id="defendtype1" class="type normal">NORMAL</td><td id="defendtype2" class=""></td></table>
+                                    <table id="choicesummary" cellspacing="0" cellpadding="0"><td id="attacktype" class="type fighting">FIGHTING</td><td style="width: 48px; text-align: center;"><div style="width: 100%; height: 100%;"><img src="images/attarrow2.svg" style="height: 100%;"/></div></td><td id="defendtype1" class="type normal">NORMAL</td><td id="defendtype2" class=""></td></table>
                                     <br>
                                     <br>
                                     <div id="effectivity">
@@ -254,6 +267,10 @@
                                             </td>
                                             <td>
                                                 <div class="themebutton babypink" style="background-color: #FFCFFA;">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="themebutton gameboy" style="background-color: #DBFF52;">
                                                 </div>
                                             </td>
                                         </tr>

@@ -1,0 +1,87 @@
+/*
+    Palette, from lightest to darkest:
+    #9BBC0F
+    #8BAC0F
+    #306230
+    #0F380F
+*/
+
+@font-face { /* Oh yeah. This theme gon' have its own font. */
+    font-family: "Pokemon GB";
+    src: url(../../fonts/pokemon_gb.ttf) format("truetype"),
+         url(../../fonts/pokemon_gb.woff) format("woff");
+    font-weight: normal;
+}
+
+body {
+    background: #0F380F url(../../images/whysixtyfive.png);
+}
+
+.content {
+    background: #9BBC0F;
+    font-family: "Pokemon GB";
+    font-size: 1.8vh;
+}
+#instructions, #smallinstructions {
+    color: #8BAC0F;
+    font-size: 3.25vh;
+    text-shadow: 2px 2px #306230;
+    
+    line-height: 1.25em;
+}
+#smallinstructions {
+    font-size: 2.45vh;
+}
+.twitlink {
+    display: inline-block;
+    border-radius: 0.1em;
+    padding: 0.1em 0.2em 0.23em 0.25em;
+    background: #306230;
+    font-family: "Power Green Small";
+    color: #8BAC0F;
+    font-size: 4.75vh;
+    text-shadow: 2px 2px #0F380F;
+}
+
+.types .type {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    padding-top: 1.8vh;
+    padding-bottom: 1.6vh;
+}
+.type {
+    font-family: "Pokemon GB";
+    font-size: 1.8vh;
+}
+.types {
+    background: #0F380F url(../../images/whysixtyfive.png);
+}
+#attacktype:not(.type), #defendtype1:not(.type), #defendtype2:not(.type) {
+    background: #8BAC0F;
+}
+.contenttable > tbody > tr > td:nth-child(2) > div {
+    background: #0F380F url(../../images/whysixtyfive.png);
+}
+#choicesummary > tbody > tr > td:nth-child(2) > div {
+    background: #8BAC0F;
+}
+#choicesummary {
+    height: 5vh;
+}
+#effectivity {
+    min-height: 25vh;
+    margin-top: 2.5vh;
+    line-height: 1.25em;
+    color: #306230;
+    font-size: 4.45vh;
+    text-shadow: 2px 2px #0F380F;
+}
+
+
+#themecontainer {
+    background: #8BAC0F;
+}
+.themebutton.gameboy {
+    background: #8BAC0F !important;
+}
