@@ -1,0 +1,48 @@
+/*
+    This is used if JS is disabled. Has to overwrite all
+    other themes, so it's !important.
+*/
+
+body {
+    background: #FFF6D0 url(../../images/pasteldot.png) !important;
+}
+.content {
+    background: #FFF;
+    font-family: "Power Green Small" !important;
+    font-size: 3.98vh !important;
+}
+.types {
+    background: #FFF6D0 !important;
+    font-size: 3.98vh !important;
+}
+.type {
+    padding: 2px !important;
+    padding-top: 3px !important;
+    font-family: "Power Green" !important;
+    color: white !important;
+    font-size: 3.98vh !important;
+    text-shadow: 1.5px 1.5px #D0D0C8 !important;
+}
+.contenttable > tbody > tr > td:nth-child(2) > div {
+    background: none !important;
+}
+
+#instructions, #smallinstructions {
+    color: #C2C2C2 !important;
+    font-size: 5.7vh !important;
+    text-shadow: 2px 2px #EEE !important;
+}
+#smallinstructions {
+    font-size: 3.98vh !important;
+}
+.twitlink {
+    display: inline !important;
+    background: none !important;
+    color: #B3C2DE !important;
+    text-decoration: none !important;
+    text-shadow: 2px 2px #EEE !important;
+}
+
+#themecontainer {
+    background: #FFF6D0 !important;
+}
